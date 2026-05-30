@@ -35,17 +35,35 @@
 ### 🎮 CODING STATS
 
 ```
-TOTAL      0000503   PUBLIC COMMITS  00030
-PRS        0000000   REVIEWS         00000
-ISSUES     0000010   PRIVATE         00459
+═══ HISCORE ════════════════════════════════
+TOTAL CONTRIBS    0000504
+  └─ PUBLIC COMMITS  0031     PRIVATE  0459
+  └─ PRS  000    REVIEWS  000    ISSUES  010
 
-ACTIVE     0062 DAYS    YEARS    7.1
-STREAK     0017 BEST    NOW      005 DAYS
+═══ ACTIVITY ══════════════════════════════
+ACTIVE DAYS       0062 / 2589  (2.4%)
+STREAK            BEST 017    CURRENT 005
+AVG / ACTIVE DAY  8.1
+WEEKEND CODER     23%
+BEST YEAR         2026 (197)
 
-PEAK       07:00 UTC · TUE
+═══ TIMING ════════════════════════════════
+PEAK              07:00 UTC · TUE
+
+═══ SOCIAL ════════════════════════════════
+FOLLOWERS  000    FOLLOWING  003
+STARS RX   0000    REPOS      003
+
+═══ TECH ══════════════════════════════════
+[JavaScript] [Shell]
+
+═══ ACHIEVEMENTS UNLOCKED ═════════════════
+🔥 STREAK STARTER    💯 CENTURY
+⚔️  500 CLUB    🌅 EARLY BIRD
+🎖️  VETERAN    ⚡ ON A ROLL
 ```
 
-<sub>auto-updated daily · contribution-calendar total includes private · times in UTC</sub>
+<sub>auto-updated daily · times in UTC · public commits only for peak hour</sub>
 <!-- COMMIT-STATS:END -->
 
 <div align="center">
