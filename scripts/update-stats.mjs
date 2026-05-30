@@ -193,10 +193,10 @@ function aggregate(years) {
 }
 
 // ── Peak hour from public commits (UTC) ────────────────────────────────
-async function peakHour(user) {
+async function hourDistribution(user) {
+  const hours = Array(24).fill(0);
   try {
     const repos = await rest(`/users/${user}/repos?type=public&sort=pushed&per_page=10`);
-    const hours = Array(24).fill(0);
     for (const r of repos.filter(r => !r.fork)) {
       try {
         const commits = await rest(`/repos/${user}/${r.name}/commits?author=${user}&per_page=100`);
@@ -207,9 +207,13 @@ async function peakHour(user) {
         }
       } catch {}
     }
-    const max = Math.max(...hours);
-    return max === 0 ? null : hours.indexOf(max);
-  } catch { return null; }
+  } catch {}
+  return hours;
+}
+
+function peakOf(hours) {
+  const max = Math.max(...hours);
+  return max === 0 ? null : hours.indexOf(max);
 }
 
 // ── Achievements (unlocked based on thresholds) ────────────────────────
@@ -234,11 +238,9 @@ function achievements(s, extras, peak) {
 }
 
 // ── Render markdown ────────────────────────────────────────────────────
-function renderBlock(s, extras, peak) {
+function renderBlock(s, extras, peak, hourlyDist) {
   const pad = (n, len) => String(n).padStart(len, '0');
-  const peakStr = peak !== null
-    ? `${String(peak).padStart(2, '0')}:00 UTC · ${s.peakDay}`
-    : `${s.peakDay}`;
+  const bestY = s.bestYear ? `${s.bestYear.year} (${s.bestYear.count})` : '—';
 
   const ach = achievements(s, extras, peak);
   const achLines = [];
@@ -246,40 +248,55 @@ function renderBlock(s, extras, peak) {
     achLines.push(ach.slice(i, i + 2).join('    '));
   }
 
-  const langStr = extras.topLangs.slice(0, 4).map(l => `[${l}]`).join(' ');
-  const bestY = s.bestYear ? `${s.bestYear.year} (${s.bestYear.count})` : '—';
+  // Time-of-day buckets from hourlyDist (24-hour UTC)
+  const total = hourlyDist.reduce((a, b) => a + b, 0) || 1;
+  const lateNight = hourlyDist.slice(0, 6).reduce((a, b) => a + b, 0);
+  const morning   = hourlyDist.slice(6, 12).reduce((a, b) => a + b, 0);
+  const afternoon = hourlyDist.slice(12, 18).reduce((a, b) => a + b, 0);
+  const evening   = hourlyDist.slice(18, 24).reduce((a, b) => a + b, 0);
+  const buckets = [
+    ['🌙 LATE NIGHT (00-06)', lateNight],
+    ['🌅 MORNING    (06-12)', morning],
+    ['☀️  AFTERNOON  (12-18)', afternoon],
+    ['🌃 EVENING    (18-24)', evening],
+  ];
+  const peakBucket = buckets.reduce((m, b) => b[1] > m[1] ? b : m, buckets[0])[0];
+  const bucketLines = buckets.map(([label, count]) => {
+    const pct = ((count / total) * 100).toFixed(1).padStart(4);
+    const isPeak = label === peakBucket ? '  ← peak' : '';
+    return `   ${label}  ${pct}%${isPeak}`;
+  });
 
   return [
     '### 🎮 CODING STATS',
     '',
     '```',
-    '═══ HISCORE ════════════════════════════════',
-    `TOTAL CONTRIBS    ${pad(s.totalContribs, 7)}`,
-    `  └─ PUBLIC COMMITS  ${pad(s.totalCommits, 4)}     PRIVATE  ${pad(s.privateCount, 4)}`,
-    `  └─ PRS  ${pad(s.totalPRs, 3)}    REVIEWS  ${pad(s.totalReviews, 3)}    ISSUES  ${pad(s.totalIssues, 3)}`,
+    '📊 OVERVIEW',
+    `   Total: ${s.totalContribs} contribs · ${s.totalCommits} public commits · ${s.privateCount} private`,
+    `   First: ${s.firstDate || '—'}`,
+    `   Span:  ${s.yearsCoding.toFixed(1)} years (active ${s.activeDays}/${s.totalDays} days · ${s.activityRate}%)`,
     '',
-    '═══ ACTIVITY ══════════════════════════════',
-    `ACTIVE DAYS       ${pad(s.activeDays, 4)} / ${pad(s.totalDays, 4)}  (${s.activityRate}%)`,
-    `STREAK            BEST ${pad(s.longest, 3)}    CURRENT ${pad(s.currentStreak, 3)}`,
-    `AVG / ACTIVE DAY  ${s.avgPerActive}`,
-    `WEEKEND CODER     ${s.weekendPct}%`,
-    `BEST YEAR         ${bestY}`,
+    '🕰️  WHEN YOU CODE (UTC)',
+    ...bucketLines,
+    `   Peak hour: ${peak !== null ? String(peak).padStart(2, '0') + ':00' : '—'}`,
     '',
-    '═══ TIMING ════════════════════════════════',
-    `PEAK              ${peakStr}`,
+    '📅 DAYS',
+    `   Favorite: ${s.peakDay}`,
+    `   Weekend coder: ${s.weekendPct}% of activity`,
+    `   Avg per active day: ${s.avgPerActive} contribs`,
     '',
-    '═══ SOCIAL ════════════════════════════════',
-    `FOLLOWERS  ${pad(extras.followers, 3)}    FOLLOWING  ${pad(extras.following, 3)}`,
-    `STARS RX   ${pad(extras.totalStars, 4)}    REPOS      ${pad(extras.publicRepos, 3)}`,
+    '🔥 STREAKS',
+    `   Best:    ${s.longest} consecutive days`,
+    `   Current: ${s.currentStreak} days`,
     '',
-    '═══ TECH ══════════════════════════════════',
-    `${langStr || '(no public language data)'}`,
+    '📈 BEST YEAR',
+    `   ${bestY}`,
     '',
-    '═══ ACHIEVEMENTS UNLOCKED ═════════════════',
-    ...(achLines.length ? achLines : ['(none yet — keep playing)']),
+    '🏆 ACHIEVEMENTS UNLOCKED',
+    ...(achLines.length ? achLines.map(l => '   ' + l) : ['   (none yet — keep playing)']),
     '```',
     '',
-    '<sub>auto-updated daily · times in UTC · public commits only for peak hour</sub>',
+    '<sub>auto-updated daily · times in UTC · peak hour sampled from public commits</sub>',
   ].join('\n');
 }
 
@@ -312,13 +329,15 @@ const README_PATH = join(__dirname, '..', 'README.md');
   ]);
 
   const stats = aggregate(years);
-  const peak = await peakHour(GH_USER);
+  const hourly = await hourDistribution(GH_USER);
+  const peak = peakOf(hourly);
 
   console.log('Stats:', stats);
   console.log('Extras:', extras);
+  console.log('Hourly:', hourly);
   console.log('Peak hour:', peak);
 
-  const block = renderBlock(stats, extras, peak);
+  const block = renderBlock(stats, extras, peak, hourly);
   const readme = readFileSync(README_PATH, 'utf-8');
   const updated = injectStats(readme, block);
 
