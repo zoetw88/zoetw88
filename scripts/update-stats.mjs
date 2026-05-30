@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-// update-stats.mjs — fetch commit stats via GraphQL (includes private contributions)
-// then patch README.md between the COMMIT-STATS markers.
-// Requires Node 18+ (built-in fetch).
+// update-stats.mjs — rich GitHub stats via GraphQL + REST
+// Pure Node 18+. Requires GITHUB_TOKEN env var.
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -39,12 +38,12 @@ async function rest(path) {
   return res.json();
 }
 
-// ── Pull yearly contribution calendars going back N years ──────────────
+// ── Yearly contribution calendars ──────────────────────────────────────
 async function fetchYears(user, fromYear, toYear) {
   const years = [];
   for (let y = fromYear; y <= toYear; y++) {
     const from = `${y}-01-01T00:00:00Z`;
-    const to   = `${y}-12-31T23:59:59Z`;
+    const to = `${y}-12-31T23:59:59Z`;
     const data = await gql(`
       query($user: String!, $from: DateTime!, $to: DateTime!) {
         user(login: $user) {
@@ -53,35 +52,68 @@ async function fetchYears(user, fromYear, toYear) {
             totalIssueContributions
             totalPullRequestContributions
             totalPullRequestReviewContributions
-            totalRepositoriesWithContributedCommits
             restrictedContributionsCount
             contributionCalendar {
               totalContributions
               weeks { contributionDays { date contributionCount weekday } }
             }
           }
-          createdAt
         }
       }
     `, { user, from, to });
     if (!data.user) throw new Error(`User @${user} not found`);
-    years.push({ year: y, ...data.user.contributionsCollection, createdAt: data.user.createdAt });
+    years.push({ year: y, ...data.user.contributionsCollection });
   }
   return years;
 }
 
-// ── Aggregate across years ──────────────────────────────────────────────
+// ── Profile-level info: followers, stars, languages ────────────────────
+async function fetchProfileExtras(user) {
+  const data = await gql(`
+    query($user: String!) {
+      user(login: $user) {
+        followers { totalCount }
+        following { totalCount }
+        repositories(first: 100, ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC) {
+          totalCount
+          nodes {
+            stargazerCount
+            primaryLanguage { name }
+          }
+        }
+      }
+    }
+  `, { user });
+  const u = data.user;
+  const totalStars = u.repositories.nodes.reduce((a, r) => a + r.stargazerCount, 0);
+  const langs = {};
+  for (const r of u.repositories.nodes) {
+    if (r.primaryLanguage) langs[r.primaryLanguage.name] = (langs[r.primaryLanguage.name] || 0) + 1;
+  }
+  const topLangs = Object.entries(langs).sort((a, b) => b[1] - a[1]).slice(0, 4).map(([n]) => n);
+  return {
+    followers: u.followers.totalCount,
+    following: u.following.totalCount,
+    publicRepos: u.repositories.totalCount,
+    totalStars,
+    topLangs,
+  };
+}
+
+// ── Aggregate years ────────────────────────────────────────────────────
 function aggregate(years) {
   let totalContribs = 0, totalCommits = 0, totalPRs = 0, totalIssues = 0, totalReviews = 0, privateCount = 0;
-  const days = [];        // {date, count, weekday}
+  const days = [];
+  const yearTotals = {};
 
   for (const y of years) {
-    totalContribs += y.contributionCalendar.totalContributions; // includes private
+    totalContribs += y.contributionCalendar.totalContributions;
     totalCommits  += y.totalCommitContributions;
     totalPRs      += y.totalPullRequestContributions;
     totalIssues   += y.totalIssueContributions;
     totalReviews  += y.totalPullRequestReviewContributions;
     privateCount  += y.restrictedContributionsCount;
+    yearTotals[y.year] = y.contributionCalendar.totalContributions;
     for (const wk of y.contributionCalendar.weeks) {
       for (const d of wk.contributionDays) {
         if (d.contributionCount > 0) days.push(d);
@@ -89,7 +121,6 @@ function aggregate(years) {
     }
   }
 
-  // Sort active days
   days.sort((a, b) => a.date.localeCompare(b.date));
   const activeDays = days.length;
 
@@ -99,19 +130,17 @@ function aggregate(years) {
     if (prevDate) {
       const diff = (new Date(d.date) - new Date(prevDate)) / 86400000;
       current = diff === 1 ? current + 1 : 1;
-    } else {
-      current = 1;
-    }
+    } else current = 1;
     longest = Math.max(longest, current);
     prevDate = d.date;
   }
 
-  // Current streak (counting back from latest active day if it's recent)
+  // Current streak
   const today = new Date().toISOString().slice(0, 10);
   let currentStreak = 0;
   if (days.length) {
     const sorted = [...days].reverse();
-    let lastDate = sorted[0].date;
+    const lastDate = sorted[0].date;
     if (lastDate === today || (Date.parse(today) - Date.parse(lastDate)) / 86400000 <= 1) {
       currentStreak = 1;
       for (let i = 1; i < sorted.length; i++) {
@@ -128,25 +157,42 @@ function aggregate(years) {
   const weekdayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
   const peakDay = weekdayNames[weekdayCount.indexOf(Math.max(...weekdayCount))];
 
-  // Years coding (from first active day → today)
+  // Weekend ratio
+  const weekendTotal = weekdayCount[0] + weekdayCount[6];
+  const weekdayTotal = weekdayCount.slice(1, 6).reduce((a, b) => a + b, 0);
+  const weekendPct = (weekendTotal + weekdayTotal) > 0
+    ? Math.round((weekendTotal / (weekendTotal + weekdayTotal)) * 100)
+    : 0;
+
+  // Best year
+  const bestYear = Object.entries(yearTotals).sort((a, b) => b[1] - a[1])[0];
+
+  // Years coding
   const firstDate = days[0]?.date;
   const yearsCoding = firstDate
     ? Math.max(0.1, (Date.now() - Date.parse(firstDate)) / (1000 * 60 * 60 * 24 * 365))
     : 0;
 
+  // Total possible days
+  const totalDays = firstDate
+    ? Math.round((Date.now() - Date.parse(firstDate)) / 86400000)
+    : 1;
+  const activityRate = Math.round((activeDays / totalDays) * 1000) / 10; // %
+
+  // Avg per active day
+  const avgPerActive = activeDays > 0 ? Math.round((totalContribs / activeDays) * 10) / 10 : 0;
+
   return {
-    totalContribs, totalCommits, totalPRs, totalIssues, totalReviews,
-    privateCount,
-    activeDays,
-    longest,
-    currentStreak,
-    peakDay,
-    yearsCoding,
-    firstDate,
+    totalContribs, totalCommits, totalPRs, totalIssues, totalReviews, privateCount,
+    activeDays, totalDays, activityRate,
+    longest, currentStreak,
+    peakDay, weekendPct, avgPerActive,
+    yearsCoding, firstDate,
+    bestYear: bestYear ? { year: bestYear[0], count: bestYear[1] } : null,
   };
 }
 
-// ── Peak hour: scan recent PUBLIC commits via REST (~last 100 per repo, top 10 repos) ──
+// ── Peak hour from public commits (UTC) ────────────────────────────────
 async function peakHour(user) {
   try {
     const repos = await rest(`/users/${user}/repos?type=public&sort=pushed&per_page=10`);
@@ -162,68 +208,117 @@ async function peakHour(user) {
       } catch {}
     }
     const max = Math.max(...hours);
-    if (max === 0) return null;
-    return hours.indexOf(max);
+    return max === 0 ? null : hours.indexOf(max);
   } catch { return null; }
 }
 
-// ── Render markdown block ───────────────────────────────────────────────
-function renderBlock(s, peak) {
+// ── Achievements (unlocked based on thresholds) ────────────────────────
+function achievements(s, extras, peak) {
+  const a = [];
+  if (s.longest >= 7) a.push('🔥 STREAK STARTER');
+  if (s.longest >= 30) a.push('🚀 STREAK MASTER');
+  if (s.longest >= 100) a.push('👑 STREAK LEGEND');
+  if (s.totalContribs >= 100) a.push('💯 CENTURY');
+  if (s.totalContribs >= 500) a.push('⚔️  500 CLUB');
+  if (s.totalContribs >= 1000) a.push('🏆 KILO COMMITTER');
+  if (peak !== null && (peak < 6 || peak >= 22)) a.push('🌙 NIGHT OWL');
+  if (peak !== null && peak >= 5 && peak <= 8) a.push('🌅 EARLY BIRD');
+  if (s.weekendPct >= 40) a.push('🍕 WEEKEND WARRIOR');
+  if (extras.totalStars >= 1) a.push('⭐ FIRST STAR');
+  if (extras.totalStars >= 10) a.push('🌟 RISING STAR');
+  if (extras.publicRepos >= 5) a.push('📚 LIBRARY OWNER');
+  if (extras.topLangs.length >= 3) a.push('🎨 POLYGLOT');
+  if (s.yearsCoding >= 5) a.push('🎖️  VETERAN');
+  if (s.currentStreak >= 5) a.push('⚡ ON A ROLL');
+  return a;
+}
+
+// ── Render markdown ────────────────────────────────────────────────────
+function renderBlock(s, extras, peak) {
   const pad = (n, len) => String(n).padStart(len, '0');
   const peakStr = peak !== null
     ? `${String(peak).padStart(2, '0')}:00 UTC · ${s.peakDay}`
     : `${s.peakDay}`;
 
+  const ach = achievements(s, extras, peak);
+  const achLines = [];
+  for (let i = 0; i < ach.length; i += 2) {
+    achLines.push(ach.slice(i, i + 2).join('    '));
+  }
+
+  const langStr = extras.topLangs.slice(0, 4).map(l => `[${l}]`).join(' ');
+  const bestY = s.bestYear ? `${s.bestYear.year} (${s.bestYear.count})` : '—';
+
   return [
     '### 🎮 CODING STATS',
     '',
     '```',
-    `TOTAL      ${pad(s.totalContribs, 7)}   PUBLIC COMMITS  ${pad(s.totalCommits, 5)}`,
-    `PRS        ${pad(s.totalPRs, 7)}   REVIEWS         ${pad(s.totalReviews, 5)}`,
-    `ISSUES     ${pad(s.totalIssues, 7)}   PRIVATE         ${pad(s.privateCount, 5)}`,
+    '═══ HISCORE ════════════════════════════════',
+    `TOTAL CONTRIBS    ${pad(s.totalContribs, 7)}`,
+    `  └─ PUBLIC COMMITS  ${pad(s.totalCommits, 4)}     PRIVATE  ${pad(s.privateCount, 4)}`,
+    `  └─ PRS  ${pad(s.totalPRs, 3)}    REVIEWS  ${pad(s.totalReviews, 3)}    ISSUES  ${pad(s.totalIssues, 3)}`,
     '',
-    `ACTIVE     ${pad(s.activeDays, 4)} DAYS    YEARS    ${s.yearsCoding.toFixed(1)}`,
-    `STREAK     ${pad(s.longest, 4)} BEST    NOW      ${pad(s.currentStreak, 3)} DAYS`,
+    '═══ ACTIVITY ══════════════════════════════',
+    `ACTIVE DAYS       ${pad(s.activeDays, 4)} / ${pad(s.totalDays, 4)}  (${s.activityRate}%)`,
+    `STREAK            BEST ${pad(s.longest, 3)}    CURRENT ${pad(s.currentStreak, 3)}`,
+    `AVG / ACTIVE DAY  ${s.avgPerActive}`,
+    `WEEKEND CODER     ${s.weekendPct}%`,
+    `BEST YEAR         ${bestY}`,
     '',
-    `PEAK       ${peakStr}`,
+    '═══ TIMING ════════════════════════════════',
+    `PEAK              ${peakStr}`,
+    '',
+    '═══ SOCIAL ════════════════════════════════',
+    `FOLLOWERS  ${pad(extras.followers, 3)}    FOLLOWING  ${pad(extras.following, 3)}`,
+    `STARS RX   ${pad(extras.totalStars, 4)}    REPOS      ${pad(extras.publicRepos, 3)}`,
+    '',
+    '═══ TECH ══════════════════════════════════',
+    `${langStr || '(no public language data)'}`,
+    '',
+    '═══ ACHIEVEMENTS UNLOCKED ═════════════════',
+    ...(achLines.length ? achLines : ['(none yet — keep playing)']),
     '```',
     '',
-    '<sub>auto-updated daily · contribution-calendar total includes private · times in UTC</sub>',
+    '<sub>auto-updated daily · times in UTC · public commits only for peak hour</sub>',
   ].join('\n');
 }
 
-// ── README injection ────────────────────────────────────────────────────
+// ── README injection ───────────────────────────────────────────────────
 const START_MARKER = '<!-- COMMIT-STATS:START -->';
 const END_MARKER   = '<!-- COMMIT-STATS:END -->';
 
 function injectStats(readme, block) {
   const start = readme.indexOf(START_MARKER);
   const end = readme.indexOf(END_MARKER);
-  if (start === -1 || end === -1) throw new Error('Markers not found in README.md');
+  if (start === -1 || end === -1) throw new Error('Markers not found');
   return readme.slice(0, start + START_MARKER.length) + '\n' + block + '\n' + readme.slice(end);
 }
 
-// ── Main ────────────────────────────────────────────────────────────────
+// ── Main ───────────────────────────────────────────────────────────────
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const README_PATH = join(__dirname, '..', 'README.md');
 
 (async () => {
   console.log(`Fetching stats for @${GH_USER} ...`);
 
-  // figure out year range from account creation
   const accountInfo = await gql(`query($user: String!){ user(login: $user) { createdAt } }`, { user: GH_USER });
   const startYear = new Date(accountInfo.user.createdAt).getFullYear();
   const endYear = new Date().getFullYear();
-  console.log(`Years to scan: ${startYear}–${endYear}`);
+  console.log(`Years: ${startYear}–${endYear}`);
 
-  const years = await fetchYears(GH_USER, startYear, endYear);
+  const [years, extras] = await Promise.all([
+    fetchYears(GH_USER, startYear, endYear),
+    fetchProfileExtras(GH_USER),
+  ]);
+
   const stats = aggregate(years);
-  console.log('Stats:', stats);
-
   const peak = await peakHour(GH_USER);
-  console.log('Peak hour (UTC):', peak);
 
-  const block = renderBlock(stats, peak);
+  console.log('Stats:', stats);
+  console.log('Extras:', extras);
+  console.log('Peak hour:', peak);
+
+  const block = renderBlock(stats, extras, peak);
   const readme = readFileSync(README_PATH, 'utf-8');
   const updated = injectStats(readme, block);
 
