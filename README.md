@@ -31,6 +31,10 @@
 + System Design notes · LLM-as-judge eval
 ```
 
+<!-- COMMIT-STATS:START -->
+*Loading stats...*
+<!-- COMMIT-STATS:END -->
+
 <div align="center">
 
 [**▶ CONTINUE  →  zoe-site-ten.vercel.app**](https://zoe-site-ten.vercel.app)
