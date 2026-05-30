@@ -249,23 +249,33 @@ function renderBlock(s, extras, peak, hourlyDist) {
   }
 
   // Time-of-day buckets from hourlyDist (24-hour UTC)
-  const total = hourlyDist.reduce((a, b) => a + b, 0) || 1;
-  const lateNight = hourlyDist.slice(0, 6).reduce((a, b) => a + b, 0);
-  const morning   = hourlyDist.slice(6, 12).reduce((a, b) => a + b, 0);
-  const afternoon = hourlyDist.slice(12, 18).reduce((a, b) => a + b, 0);
-  const evening   = hourlyDist.slice(18, 24).reduce((a, b) => a + b, 0);
-  const buckets = [
-    ['🌙 LATE NIGHT (00-06)', lateNight],
-    ['🌅 MORNING    (06-12)', morning],
-    ['☀️  AFTERNOON  (12-18)', afternoon],
-    ['🌃 EVENING    (18-24)', evening],
-  ];
-  const peakBucket = buckets.reduce((m, b) => b[1] > m[1] ? b : m, buckets[0])[0];
-  const bucketLines = buckets.map(([label, count]) => {
-    const pct = ((count / total) * 100).toFixed(1).padStart(4);
-    const isPeak = label === peakBucket ? '  ← peak' : '';
-    return `   ${label}  ${pct}%${isPeak}`;
-  });
+  const total = hourlyDist.reduce((a, b) => a + b, 0);
+  const SAMPLE_THRESHOLD = 50;   // need this many commits before % is meaningful
+  let timingLines = [];
+  if (total >= SAMPLE_THRESHOLD) {
+    const lateNight = hourlyDist.slice(0, 6).reduce((a, b) => a + b, 0);
+    const morning   = hourlyDist.slice(6, 12).reduce((a, b) => a + b, 0);
+    const afternoon = hourlyDist.slice(12, 18).reduce((a, b) => a + b, 0);
+    const evening   = hourlyDist.slice(18, 24).reduce((a, b) => a + b, 0);
+    const buckets = [
+      ['🌙 LATE NIGHT (00-06)', lateNight],
+      ['🌅 MORNING    (06-12)', morning],
+      ['☀️  AFTERNOON  (12-18)', afternoon],
+      ['🌃 EVENING    (18-24)', evening],
+    ];
+    const peakBucket = buckets.reduce((m, b) => b[1] > m[1] ? b : m, buckets[0])[0];
+    timingLines = [
+      '',
+      '🕰️  WHEN YOU CODE (UTC, public commits only)',
+      ...buckets.map(([label, count]) => {
+        const pct = ((count / total) * 100).toFixed(1).padStart(4);
+        const isPeak = label === peakBucket ? '  ← peak' : '';
+        return `   ${label}  ${pct}%${isPeak}`;
+      }),
+      `   Peak hour: ${peak !== null ? String(peak).padStart(2, '0') + ':00' : '—'}`,
+      `   Sample size: ${total} commits`,
+    ];
+  }
 
   return [
     '### 🎮 CODING STATS',
@@ -275,10 +285,7 @@ function renderBlock(s, extras, peak, hourlyDist) {
     `   Total: ${s.totalContribs} contribs · ${s.totalCommits} public commits · ${s.privateCount} private`,
     `   First: ${s.firstDate || '—'}`,
     `   Span:  ${s.yearsCoding.toFixed(1)} years (active ${s.activeDays}/${s.totalDays} days · ${s.activityRate}%)`,
-    '',
-    '🕰️  WHEN YOU CODE (UTC)',
-    ...bucketLines,
-    `   Peak hour: ${peak !== null ? String(peak).padStart(2, '0') + ':00' : '—'}`,
+    ...timingLines,
     '',
     '📅 DAYS',
     `   Favorite: ${s.peakDay}`,
