@@ -35,35 +35,37 @@
 ### 🎮 CODING STATS
 
 ```
-═══ HISCORE ════════════════════════════════
-TOTAL CONTRIBS    0000504
-  └─ PUBLIC COMMITS  0031     PRIVATE  0459
-  └─ PRS  000    REVIEWS  000    ISSUES  010
+📊 OVERVIEW
+   Total: 505 contribs · 32 public commits · 459 private
+   First: 2019-04-28
+   Span:  7.1 years (active 62/2589 days · 2.4%)
 
-═══ ACTIVITY ══════════════════════════════
-ACTIVE DAYS       0062 / 2589  (2.4%)
-STREAK            BEST 017    CURRENT 005
-AVG / ACTIVE DAY  8.1
-WEEKEND CODER     23%
-BEST YEAR         2026 (197)
+🕰️  WHEN YOU CODE (UTC)
+   🌙 LATE NIGHT (00-06)   0.0%
+   🌅 MORNING    (06-12)  100.0%  ← peak
+   ☀️  AFTERNOON  (12-18)   0.0%
+   🌃 EVENING    (18-24)   0.0%
+   Peak hour: 07:00
 
-═══ TIMING ════════════════════════════════
-PEAK              07:00 UTC · TUE
+📅 DAYS
+   Favorite: TUE
+   Weekend coder: 23% of activity
+   Avg per active day: 8.1 contribs
 
-═══ SOCIAL ════════════════════════════════
-FOLLOWERS  000    FOLLOWING  003
-STARS RX   0000    REPOS      003
+🔥 STREAKS
+   Best:    17 consecutive days
+   Current: 5 days
 
-═══ TECH ══════════════════════════════════
-[JavaScript] [Shell]
+📈 BEST YEAR
+   2026 (198)
 
-═══ ACHIEVEMENTS UNLOCKED ═════════════════
-🔥 STREAK STARTER    💯 CENTURY
-⚔️  500 CLUB    🌅 EARLY BIRD
-🎖️  VETERAN    ⚡ ON A ROLL
+🏆 ACHIEVEMENTS UNLOCKED
+   🔥 STREAK STARTER    💯 CENTURY
+   ⚔️  500 CLUB    🌅 EARLY BIRD
+   🎖️  VETERAN    ⚡ ON A ROLL
 ```
 
-<sub>auto-updated daily · times in UTC · public commits only for peak hour</sub>
+<sub>auto-updated daily · times in UTC · peak hour sampled from public commits</sub>
 <!-- COMMIT-STATS:END -->
 
 <div align="center">
