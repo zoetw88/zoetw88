@@ -35,12 +35,16 @@
 ### 🎮 CODING STATS
 
 ```
-POINTS  0000011   ·   WORLD  3 REPOS
-TIME    0.0 YRS   ·   LIVES  1 STREAK
-PEAK    07:00 · SATURDAY
+COMMITS    0000029   PRS       00000
+REVIEWS    0000000   ISSUES    00010
+
+ACTIVE     0003 DAYS    YEARS    7.1
+STREAK     0001 BEST    NOW      001 DAYS
+
+PEAK       07:00 UTC · SAT
 ```
 
-<sub>auto-updated daily · times in UTC</sub>
+<sub>auto-updated daily · 0 private contributions included · times in UTC</sub>
 <!-- COMMIT-STATS:END -->
 
 <div align="center">
