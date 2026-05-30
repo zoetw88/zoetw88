@@ -32,7 +32,15 @@
 ```
 
 <!-- COMMIT-STATS:START -->
-*Loading stats...*
+### 🎮 CODING STATS
+
+```
+POINTS  0000009   ·   WORLD  3 REPOS
+TIME    0.0 YRS   ·   LIVES  1 STREAK
+PEAK    07:00 · SATURDAY
+```
+
+<sub>auto-updated daily · times in UTC</sub>
 <!-- COMMIT-STATS:END -->
 
 <div align="center">
