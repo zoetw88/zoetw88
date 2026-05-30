@@ -72,11 +72,11 @@ async function fetchYears(user, fromYear, toYear) {
 
 // ── Aggregate across years ──────────────────────────────────────────────
 function aggregate(years) {
-  let totalCommits = 0, totalPRs = 0, totalIssues = 0, totalReviews = 0, privateCount = 0;
+  let totalContribs = 0, totalCommits = 0, totalPRs = 0, totalIssues = 0, totalReviews = 0, privateCount = 0;
   const days = [];        // {date, count, weekday}
-  const reposSet = new Set();   // approximate — graphql doesn't list names
 
   for (const y of years) {
+    totalContribs += y.contributionCalendar.totalContributions; // includes private
     totalCommits  += y.totalCommitContributions;
     totalPRs      += y.totalPullRequestContributions;
     totalIssues   += y.totalIssueContributions;
@@ -135,7 +135,7 @@ function aggregate(years) {
     : 0;
 
   return {
-    totalCommits, totalPRs, totalIssues, totalReviews,
+    totalContribs, totalCommits, totalPRs, totalIssues, totalReviews,
     privateCount,
     activeDays,
     longest,
@@ -178,8 +178,9 @@ function renderBlock(s, peak) {
     '### 🎮 CODING STATS',
     '',
     '```',
-    `COMMITS    ${pad(s.totalCommits, 7)}   PRS       ${pad(s.totalPRs, 5)}`,
-    `REVIEWS    ${pad(s.totalReviews, 7)}   ISSUES    ${pad(s.totalIssues, 5)}`,
+    `TOTAL      ${pad(s.totalContribs, 7)}   PUBLIC COMMITS  ${pad(s.totalCommits, 5)}`,
+    `PRS        ${pad(s.totalPRs, 7)}   REVIEWS         ${pad(s.totalReviews, 5)}`,
+    `ISSUES     ${pad(s.totalIssues, 7)}   PRIVATE         ${pad(s.privateCount, 5)}`,
     '',
     `ACTIVE     ${pad(s.activeDays, 4)} DAYS    YEARS    ${s.yearsCoding.toFixed(1)}`,
     `STREAK     ${pad(s.longest, 4)} BEST    NOW      ${pad(s.currentStreak, 3)} DAYS`,
@@ -187,7 +188,7 @@ function renderBlock(s, peak) {
     `PEAK       ${peakStr}`,
     '```',
     '',
-    `<sub>auto-updated daily · ${s.privateCount} private contributions included · times in UTC</sub>`,
+    '<sub>auto-updated daily · contribution-calendar total includes private · times in UTC</sub>',
   ].join('\n');
 }
 
