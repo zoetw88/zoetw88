@@ -1,65 +1,43 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=30&duration=2600&pause=700&color=2F81F7&center=true&vCenter=true&width=760&height=70&lines=ZoeTW+%E2%80%94+Senior+Backend+Engineer;Local-first+AI+tools;Distributed+systems+%C3%97+product+execution" alt="Animated ZoeTW profile headline" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2600&pause=800&color=8B949E&center=true&vCenter=true&width=820&height=64&lines=ZoeTW+%E2%80%94+Senior+Backend+Engineer;Local-first+AI+systems;Product+loops+that+can+be+measured" alt="Animated ZoeTW profile headline" />
 
-**Senior Backend Engineer · Distributed Systems · Local-first AI**
+**Backend systems · local-first AI tools · evaluable product loops**
 
-Toronto · Taipei · University of Florida
-
-![Focus](https://img.shields.io/badge/Focus-local--first_AI-2F81F7?style=for-the-badge&labelColor=0D1117)
-![Systems](https://img.shields.io/badge/Systems-backend_%2B_data-238636?style=for-the-badge&labelColor=0D1117)
-![Mode](https://img.shields.io/badge/Mode-build_%2B_verify-F0883E?style=for-the-badge&labelColor=0D1117)
+Toronto · Taipei
 
 </div>
 
-### Stack
+### Selected Systems
 
-![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white&labelColor=000)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=000)
-![Kafka](https://img.shields.io/badge/Kafka-E62E2D?style=for-the-badge&logo=apachekafka&logoColor=white&labelColor=000)
-![MQTT](https://img.shields.io/badge/MQTT-FFC107?style=for-the-badge&logo=mqtt&logoColor=black&labelColor=000)
-![Redis](https://img.shields.io/badge/Redis-E62E2D?style=for-the-badge&logo=redis&logoColor=white&labelColor=000)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white&labelColor=000)
-![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonwebservices&logoColor=white&labelColor=000)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white&labelColor=000)
+| Project | What it shows |
+|---|---|
+| [12wy-tracker](https://github.com/zoetw88/12wy-tracker) | Local-first Tauri desktop app for 12 Week Year execution, BYOK/Ollama AI coaching, prompt logs, budget limits, eval artifacts |
+| AI evaluation loop | Prompt versioning, fixed cases, rubric scoring, usage/cost/latency tracking, inspectable prompt history |
+| Backend practice | Go, Python, event-driven systems, data stores, reliability tradeoffs |
 
-### Current Work
+### Operating Style
 
-```diff
-+ 12wy-tracker · local-first 12 Week Year desktop app with BYOK/Ollama AI coaching
-+ AI evaluation loop · prompt versions, usage history, rubric reports
-+ System design notes · backend, data, reliability, and AI product tradeoffs
-```
+- Build small complete systems instead of large unfinished surfaces.
+- Keep private user data local by default.
+- Make AI output auditable: prompt, version, model, cost, latency, and feedback.
+- Treat tests, evals, and release artifacts as part of the product.
 
 <!-- COMMIT-STATS:START -->
-### 🎮 CODING STATS
+### Engineering Telemetry
 
 ```
-📊 OVERVIEW
-   Total: 660 contribs · 49 public commits · 587 private
-   First: 2019-04-28
-   Span:  7.1 years (active 64/2593 days · 2.5%)
+Contributions   662 total · 51 public commits · 587 private
+First activity  2019-04-28
+Active span     7.1 years · 65/2593 days · 2.5%
 
-📅 DAYS
-   Favorite: TUE
-   Weekend coder: 30% of activity
-   Avg per active day: 10.3 contribs
-
-🔥 STREAKS
-   Best:    17 consecutive days
-   Current: 8 days
-
-📈 BEST YEAR
-   2026 (353)
-
-🏆 ACHIEVEMENTS UNLOCKED
-   🔥 STREAK STARTER    💯 CENTURY
-   ⚔️  500 CLUB    🌅 EARLY BIRD
-   🎨 POLYGLOT    🎖️  VETERAN
-   ⚡ ON A ROLL
+Cadence         favorite day TUE · weekend 30% · avg 10.2/active day
+Streaks         current 9 days · best 17 days
+Best year       2026 (355)
+Signals         streak starter · century · 500 club · polyglot · veteran · active streak
 ```
 
-<sub>auto-updated daily · times in UTC · peak hour sampled from public commits</sub>
+<sub>Auto-updated daily. Private contributions are counted by GitHub summary only; peak timing uses public commits.</sub>
 <!-- COMMIT-STATS:END -->
 
 <div align="center">

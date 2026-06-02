@@ -219,21 +219,21 @@ function peakOf(hours) {
 // ── Achievements (unlocked based on thresholds) ────────────────────────
 function achievements(s, extras, peak) {
   const a = [];
-  if (s.longest >= 7) a.push('🔥 STREAK STARTER');
-  if (s.longest >= 30) a.push('🚀 STREAK MASTER');
-  if (s.longest >= 100) a.push('👑 STREAK LEGEND');
-  if (s.totalContribs >= 100) a.push('💯 CENTURY');
-  if (s.totalContribs >= 500) a.push('⚔️  500 CLUB');
-  if (s.totalContribs >= 1000) a.push('🏆 KILO COMMITTER');
-  if (peak !== null && (peak < 6 || peak >= 22)) a.push('🌙 NIGHT OWL');
-  if (peak !== null && peak >= 5 && peak <= 8) a.push('🌅 EARLY BIRD');
-  if (s.weekendPct >= 40) a.push('🍕 WEEKEND WARRIOR');
-  if (extras.totalStars >= 1) a.push('⭐ FIRST STAR');
-  if (extras.totalStars >= 10) a.push('🌟 RISING STAR');
-  if (extras.publicRepos >= 5) a.push('📚 LIBRARY OWNER');
-  if (extras.topLangs.length >= 3) a.push('🎨 POLYGLOT');
-  if (s.yearsCoding >= 5) a.push('🎖️  VETERAN');
-  if (s.currentStreak >= 5) a.push('⚡ ON A ROLL');
+  if (s.longest >= 7) a.push('streak starter');
+  if (s.longest >= 30) a.push('streak master');
+  if (s.longest >= 100) a.push('streak legend');
+  if (s.totalContribs >= 100) a.push('century');
+  if (s.totalContribs >= 500) a.push('500 club');
+  if (s.totalContribs >= 1000) a.push('kilo contributor');
+  if (peak !== null && (peak < 6 || peak >= 22)) a.push('late-night builder');
+  if (peak !== null && peak >= 5 && peak <= 8) a.push('early builder');
+  if (s.weekendPct >= 40) a.push('weekend builder');
+  if (extras.totalStars >= 1) a.push('first star');
+  if (extras.totalStars >= 10) a.push('rising star');
+  if (extras.publicRepos >= 5) a.push('library owner');
+  if (extras.topLangs.length >= 3) a.push('polyglot');
+  if (s.yearsCoding >= 5) a.push('veteran');
+  if (s.currentStreak >= 5) a.push('active streak');
   return a;
 }
 
@@ -243,10 +243,7 @@ function renderBlock(s, extras, peak, hourlyDist) {
   const bestY = s.bestYear ? `${s.bestYear.year} (${s.bestYear.count})` : '—';
 
   const ach = achievements(s, extras, peak);
-  const achLines = [];
-  for (let i = 0; i < ach.length; i += 2) {
-    achLines.push(ach.slice(i, i + 2).join('    '));
-  }
+  const signalLine = ach.length ? ach.join(' · ') : 'collecting signal';
 
   // Time-of-day buckets from hourlyDist (24-hour UTC)
   const total = hourlyDist.reduce((a, b) => a + b, 0);
@@ -258,15 +255,15 @@ function renderBlock(s, extras, peak, hourlyDist) {
     const afternoon = hourlyDist.slice(12, 18).reduce((a, b) => a + b, 0);
     const evening   = hourlyDist.slice(18, 24).reduce((a, b) => a + b, 0);
     const buckets = [
-      ['🌙 LATE NIGHT (00-06)', lateNight],
-      ['🌅 MORNING    (06-12)', morning],
-      ['☀️  AFTERNOON  (12-18)', afternoon],
-      ['🌃 EVENING    (18-24)', evening],
+      ['Late night  00-06', lateNight],
+      ['Morning     06-12', morning],
+      ['Afternoon   12-18', afternoon],
+      ['Evening     18-24', evening],
     ];
     const peakBucket = buckets.reduce((m, b) => b[1] > m[1] ? b : m, buckets[0])[0];
     timingLines = [
       '',
-      '🕰️  WHEN YOU CODE (UTC, public commits only)',
+      'Commit timing, UTC public sample',
       ...buckets.map(([label, count]) => {
         const pct = ((count / total) * 100).toFixed(1).padStart(4);
         const isPeak = label === peakBucket ? '  ← peak' : '';
@@ -278,32 +275,21 @@ function renderBlock(s, extras, peak, hourlyDist) {
   }
 
   return [
-    '### 🎮 CODING STATS',
+    '### Engineering Telemetry',
     '',
     '```',
-    '📊 OVERVIEW',
-    `   Total: ${s.totalContribs} contribs · ${s.totalCommits} public commits · ${s.privateCount} private`,
-    `   First: ${s.firstDate || '—'}`,
-    `   Span:  ${s.yearsCoding.toFixed(1)} years (active ${s.activeDays}/${s.totalDays} days · ${s.activityRate}%)`,
+    `Contributions   ${s.totalContribs} total · ${s.totalCommits} public commits · ${s.privateCount} private`,
+    `First activity  ${s.firstDate || '—'}`,
+    `Active span     ${s.yearsCoding.toFixed(1)} years · ${s.activeDays}/${s.totalDays} days · ${s.activityRate}%`,
     ...timingLines,
     '',
-    '📅 DAYS',
-    `   Favorite: ${s.peakDay}`,
-    `   Weekend coder: ${s.weekendPct}% of activity`,
-    `   Avg per active day: ${s.avgPerActive} contribs`,
-    '',
-    '🔥 STREAKS',
-    `   Best:    ${s.longest} consecutive days`,
-    `   Current: ${s.currentStreak} days`,
-    '',
-    '📈 BEST YEAR',
-    `   ${bestY}`,
-    '',
-    '🏆 ACHIEVEMENTS UNLOCKED',
-    ...(achLines.length ? achLines.map(l => '   ' + l) : ['   (none yet — keep playing)']),
+    `Cadence         favorite day ${s.peakDay} · weekend ${s.weekendPct}% · avg ${s.avgPerActive}/active day`,
+    `Streaks         current ${s.currentStreak} days · best ${s.longest} days`,
+    `Best year       ${bestY}`,
+    `Signals         ${signalLine}`,
     '```',
     '',
-    '<sub>auto-updated daily · times in UTC · peak hour sampled from public commits</sub>',
+    '<sub>Auto-updated daily. Private contributions are counted by GitHub summary only; peak timing uses public commits.</sub>',
   ].join('\n');
 }
 
