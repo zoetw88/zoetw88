@@ -1,18 +1,18 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=44&duration=2500&pause=800&color=E62E2D&center=true&vCenter=true&width=600&height=90&lines=%E2%96%B6+Z+O+E;PRESS+START;WORLD+1-1" alt="ZOE" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=30&duration=2600&pause=700&color=2F81F7&center=true&vCenter=true&width=760&height=70&lines=ZoeTW+%E2%80%94+Senior+Backend+Engineer;Local-first+AI+tools;Distributed+systems+%C3%97+product+execution" alt="Animated ZoeTW profile headline" />
 
-**Senior Backend Engineer · Distributed Systems · AI**
+**Senior Backend Engineer · Distributed Systems · Local-first AI**
 
-🇨🇦 Toronto · 🇹🇼 Taipei · 🐊 University of Florida
+Toronto · Taipei · University of Florida
 
-![](https://img.shields.io/badge/%F0%9F%AA%99_COINS-9999-FFC107?style=for-the-badge&labelColor=000)
-![](https://img.shields.io/badge/%E2%9D%A4%EF%B8%8F_LIVES-3-E62E2D?style=for-the-badge&labelColor=000)
-![](https://img.shields.io/badge/%E2%AD%90_LV-99-FFC107?style=for-the-badge&labelColor=000)
+![Focus](https://img.shields.io/badge/Focus-local--first_AI-2F81F7?style=for-the-badge&labelColor=0D1117)
+![Systems](https://img.shields.io/badge/Systems-backend_%2B_data-238636?style=for-the-badge&labelColor=0D1117)
+![Mode](https://img.shields.io/badge/Mode-build_%2B_verify-F0883E?style=for-the-badge&labelColor=0D1117)
 
 </div>
 
-### 🍄 Power-ups
+### Stack
 
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white&labelColor=000)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=000)
@@ -23,12 +23,12 @@
 ![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonwebservices&logoColor=white&labelColor=000)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white&labelColor=000)
 
-### ⭐ Current quest
+### Current Work
 
 ```diff
-+ Agentic AI chatbot · RAG over internal docs
-+ Writing essays @ zoe-site
-+ System Design notes · LLM-as-judge eval
++ 12wy-tracker · local-first 12 Week Year desktop app with BYOK/Ollama AI coaching
++ AI evaluation loop · prompt versions, usage history, rubric reports
++ System design notes · backend, data, reliability, and AI product tradeoffs
 ```
 
 <!-- COMMIT-STATS:START -->
@@ -36,28 +36,21 @@
 
 ```
 📊 OVERVIEW
-   Total: 626 contribs · 41 public commits · 563 private
+   Total: 660 contribs · 49 public commits · 587 private
    First: 2019-04-28
-   Span:  7.1 years (active 65/2592 days · 2.5%)
-
-🕰️  WHEN YOU CODE (UTC)
-   🌙 LATE NIGHT (00-06)   0.0%
-   🌅 MORNING    (06-12)  90.0%  ← peak
-   ☀️  AFTERNOON  (12-18)  10.0%
-   🌃 EVENING    (18-24)   0.0%
-   Peak hour: 07:00
+   Span:  7.1 years (active 64/2593 days · 2.5%)
 
 📅 DAYS
-   Favorite: MON
-   Weekend coder: 31% of activity
-   Avg per active day: 9.6 contribs
+   Favorite: TUE
+   Weekend coder: 30% of activity
+   Avg per active day: 10.3 contribs
 
 🔥 STREAKS
    Best:    17 consecutive days
    Current: 8 days
 
 📈 BEST YEAR
-   2026 (319)
+   2026 (353)
 
 🏆 ACHIEVEMENTS UNLOCKED
    🔥 STREAK STARTER    💯 CENTURY
@@ -71,6 +64,6 @@
 
 <div align="center">
 
-[**▶ CONTINUE  →  zoe-site-ten.vercel.app**](https://zoe-site-ten.vercel.app)
+[**12wy-tracker**](https://github.com/zoetw88/12wy-tracker) · [**zoe-site**](https://zoe-site-ten.vercel.app)
 
 </div>
