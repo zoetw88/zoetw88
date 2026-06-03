@@ -6,9 +6,39 @@
 
 Toronto · Taipei
 
+<p>
+  <img src="https://img.shields.io/badge/Backend-1f2937?style=for-the-badge&logo=go&logoColor=white" alt="Backend" />
+  <img src="https://img.shields.io/badge/AI%20Systems-8b5cf6?style=for-the-badge&logo=openai&logoColor=white" alt="AI Systems" />
+  <img src="https://img.shields.io/badge/Local--first-059669?style=for-the-badge&logo=sqlite&logoColor=white" alt="Local-first" />
+</p>
+
 </div>
 
-### Selected Systems
+### 🧭 Notes
+
+I am a backend engineer working around distributed systems, internal tools, and AI workflows.
+
+Lately I have been interested in:
+
+- local-first tools that do not leak private user data
+- AI systems with visible prompts, costs, latency, and eval results
+- writing technical notes that normal people can actually read
+- small products that are boring enough to keep using
+
+### 🛠️ Power-ups
+
+<p>
+  <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" alt="Kafka" />
+  <img src="https://img.shields.io/badge/MQTT-660066?style=flat-square&logo=mqtt&logoColor=white" alt="MQTT" />
+  <img src="https://img.shields.io/badge/Redis-FF4438?style=flat-square&logo=redis&logoColor=white" alt="Redis" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white" alt="AWS" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+</p>
+
+### 🧪 Selected Systems
 
 | Project | What it shows |
 |---|---|
@@ -16,12 +46,11 @@ Toronto · Taipei
 | AI evaluation loop | Prompt versioning, fixed cases, rubric scoring, usage/cost/latency tracking, inspectable prompt history |
 | Backend practice | Go, Python, event-driven systems, data stores, reliability tradeoffs |
 
-### Operating Style
+### 🚀 Current work
 
-- Build small complete systems instead of large unfinished surfaces.
-- Keep private user data local by default.
-- Make AI output auditable: prompt, version, model, cost, latency, and feedback.
-- Treat tests, evals, and release artifacts as part of the product.
+- Building agentic AI workflows that fit real engineering teams.
+- Writing at Zoe Site about AI, backend systems, and plain-language tech.
+- Studying system design, evaluation, and how engineers can work better with AI.
 
 <!-- COMMIT-STATS:START -->
 ### Engineering Telemetry
@@ -42,6 +71,11 @@ Signals         streak starter · century · 500 club · polyglot · veteran · 
 
 <div align="center">
 
-[**12wy-tracker**](https://github.com/zoetw88/12wy-tracker) · [**zoe-site**](https://zoe-site-ten.vercel.app)
+<a href="https://github.com/zoetw88/12wy-tracker">
+  <img src="https://img.shields.io/badge/12wy--tracker-111827?style=for-the-badge&logo=github&logoColor=white" alt="12wy-tracker" />
+</a>
+<a href="https://zoe-site-ten.vercel.app">
+  <img src="https://img.shields.io/badge/Zoe%20Site-f97316?style=for-the-badge&logo=astro&logoColor=white" alt="Zoe Site" />
+</a>
 
 </div>
