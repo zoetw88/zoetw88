@@ -30,15 +30,6 @@ So the short version is: I make tools for getting better at hard things, then I 
 
 ### Product Desk
 
-<p align="center">
-  <a href="https://github.com/zoetw88/speakup-sd-showcase">
-    <img width="390" src="https://github-readme-stats.vercel.app/api/pin/?username=zoetw88&repo=speakup-sd-showcase&theme=default&hide_border=true&description_lines_count=2" alt="SpeakUp SD showcase repo card" />
-  </a>
-  <a href="https://github.com/zoetw88/tcf-canada-showcase">
-    <img width="390" src="https://github-readme-stats.vercel.app/api/pin/?username=zoetw88&repo=tcf-canada-showcase&theme=default&hide_border=true&description_lines_count=2" alt="TCF Canada showcase repo card" />
-  </a>
-</p>
-
 | Product | Status | What it demonstrates |
 |---|---:|---|
 | [SpeakUp SD](https://zoetw88.github.io/speakup-sd-showcase/) | Public showcase | AI system design interview practice with speech evaluation, whiteboard evidence, scoring reports, readiness checks, deployment operations, and customer trust surfaces. |
@@ -46,24 +37,14 @@ So the short version is: I make tools for getting better at hard things, then I 
 
 ### Tool Bench
 
-<p align="center">
-  <a href="https://github.com/zoetw88/12wy-tracker">
-    <img width="390" src="https://github-readme-stats.vercel.app/api/pin/?username=zoetw88&repo=12wy-tracker&theme=default&hide_border=true&description_lines_count=2" alt="12wy-tracker repo card" />
-  </a>
-  <a href="https://github.com/zoetw88/commit-time-machine">
-    <img width="390" src="https://github-readme-stats.vercel.app/api/pin/?username=zoetw88&repo=commit-time-machine&theme=default&hide_border=true&description_lines_count=2" alt="commit-time-machine repo card" />
-  </a>
-</p>
-
 | Project | What it demonstrates |
 |---|---|
-| [12wy-tracker](https://github.com/zoetw88/12wy-tracker) | Local-first Tauri desktop app for 12 Week Year execution, BYOK/Ollama AI coaching, prompt logs, budget limits, and eval artifacts. |
-| [commit-time-machine](https://github.com/zoetw88/commit-time-machine) | Browser-based GitHub commit pattern analyzer for cadence, timing, streaks, and readable engineering telemetry. |
-| [ai-workflow](https://github.com/zoetw88/ai-workflow) | Practical AI-agent workflow templates, prompts, and operating notes from a senior backend engineering perspective. |
+| 12wy-tracker | Local-first Tauri desktop app for 12 Week Year execution, BYOK/Ollama AI coaching, prompt logs, budget limits, and eval artifacts. |
+| commit-time-machine | Browser-based commit pattern analyzer for cadence, timing, streaks, and readable engineering telemetry. |
+| ai-workflow | Practical AI-agent workflow templates, prompts, and operating notes from a senior backend engineering perspective. |
 
 ### Current Work
 
-- Preparing public-facing product showcases for commercial AI products.
 - Building AI workflows that fit real engineering teams and production constraints.
 - Studying system design, evaluation, language-learning products, and AI-assisted engineering practice.
 - Writing at Zoe Site about backend systems, AI product engineering, and plain-language technical decisions.
@@ -84,20 +65,3 @@ Signals         streak starter · century · 500 club · kilo contributor · pol
 
 <sub>Auto-updated daily. Private contributions are counted by GitHub summary only; peak timing uses public commits.</sub>
 <!-- COMMIT-STATS:END -->
-
-<div align="center">
-
-<a href="https://zoetw88.github.io/speakup-sd-showcase/">
-  <img src="https://img.shields.io/badge/SpeakUp%20SD-111827?style=for-the-badge&logo=githubpages&logoColor=white" alt="SpeakUp SD" />
-</a>
-<a href="https://tcf-canada-gamma.vercel.app">
-  <img src="https://img.shields.io/badge/TCF%20Canada-2563eb?style=for-the-badge&logo=vercel&logoColor=white" alt="TCF Canada" />
-</a>
-<a href="https://github.com/zoetw88/12wy-tracker">
-  <img src="https://img.shields.io/badge/12wy--tracker-059669?style=for-the-badge&logo=github&logoColor=white" alt="12wy-tracker" />
-</a>
-<a href="https://zoe-site-ten.vercel.app">
-  <img src="https://img.shields.io/badge/Zoe%20Site-f97316?style=for-the-badge&logo=astro&logoColor=white" alt="Zoe Site" />
-</a>
-
-</div>
