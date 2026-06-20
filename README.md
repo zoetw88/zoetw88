@@ -56,14 +56,14 @@ Lately I have been interested in:
 ### Engineering Telemetry
 
 ```
-Contributions   1183 total · 59 public commits · 1090 private
+Contributions   1258 total · 59 public commits · 1165 private
 First activity  2019-04-28
-Active span     7.1 years · 79/2609 days · 3%
+Active span     7.2 years · 81/2610 days · 3.1%
 
-Cadence         favorite day TUE · weekend 35% · avg 15/active day
-Streaks         current 4 days · best 17 days
-Best year       2026 (876)
-Signals         streak starter · century · 500 club · kilo contributor · polyglot · veteran
+Cadence         favorite day SAT · weekend 39% · avg 15.5/active day
+Streaks         current 6 days · best 17 days
+Best year       2026 (951)
+Signals         streak starter · century · 500 club · kilo contributor · polyglot · veteran · active streak
 ```
 
 <sub>Auto-updated daily. Private contributions are counted by GitHub summary only; peak timing uses public commits.</sub>
