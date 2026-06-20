@@ -7,6 +7,14 @@
 Toronto · Taipei
 
 <p>
+  <a href="https://zoe-site-ten.vercel.app"><strong>Personal site</strong></a>
+  ·
+  <a href="https://zoe-site-ten.vercel.app"><strong>Writing</strong></a>
+  ·
+  <a href="https://github.com/zoetw88"><strong>GitHub</strong></a>
+</p>
+
+<p>
   <img src="https://img.shields.io/badge/Backend%20Systems-1f2937?style=for-the-badge&logo=go&logoColor=white" alt="Backend Systems" />
   <img src="https://img.shields.io/badge/Commercial%20AI%20Products-2563eb?style=for-the-badge&logo=openai&logoColor=white" alt="Commercial AI Products" />
   <img src="https://img.shields.io/badge/Evaluation%20Loops-059669?style=for-the-badge&logo=githubactions&logoColor=white" alt="Evaluation Loops" />
@@ -47,7 +55,7 @@ So the short version is: I make tools for getting better at hard things, then I 
 
 - Building AI workflows that fit real engineering teams and production constraints.
 - Studying system design, evaluation, language-learning products, and AI-assisted engineering practice.
-- Writing at Zoe Site about backend systems, AI product engineering, and plain-language technical decisions.
+- Writing at [Zoe Site](https://zoe-site-ten.vercel.app) about backend systems, AI product engineering, and plain-language technical decisions.
 
 <!-- COMMIT-STATS:START -->
 ### Engineering Telemetry
