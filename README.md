@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2600&pause=900&color=334155&center=true&vCenter=true&width=880&height=64&lines=ZoeTW+%E2%80%94+Senior+Backend+Engineer;Commercial+AI+products+and+backend+systems;Turning+anxiety+into+systems" alt="Animated ZoeTW profile headline" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2600&pause=900&color=334155&center=true&vCenter=true&width=880&height=64&lines=ZoeTW+%E2%80%94+Senior+Backend+Engineer;Commercial+AI+products+and+backend+systems;Tools+for+getting+better+at+hard+things" alt="Animated ZoeTW profile headline" />
 
 **Senior backend engineer building commercial AI products, evaluation systems, and practical developer tools.**
 
@@ -14,19 +14,15 @@ Toronto · Taipei
 
 </div>
 
-### Profile
+### Self Introduction
 
-I build software for the moment right before people say, "I know I need to improve, but I do not know what to do next."
+Hi, I am Zoe. I build tools for people who are preparing for something difficult: a system design interview, a French immigration speaking exam, a 12-week execution sprint, or a team trying to work with AI without losing the plot.
 
-That shows up as AI speaking practice for immigration exams, system design interview coaching, local-first weekly planning, commit-pattern telemetry, and workflow templates for engineers working with AI. Different surfaces, same instinct: take something vague and stressful, then turn it into a system people can practice, inspect, and improve.
+My favorite kind of product takes a messy human loop and gives it structure. Practice becomes visible. Feedback becomes specific. Progress leaves traces. The system can explain what it saw, what it scored, what it cost, and what changed.
 
-The through-line in my work:
+I like backend work because it is where product promises become real: auth, queues, ledgers, privacy boundaries, eval gates, observability, payments, and the small unglamorous checks that keep a product honest.
 
-- Make the invisible visible: prompts, scoring behavior, latency, costs, fallbacks, progress, and tradeoffs.
-- Build for anxious real users, not perfect demo users: practice loops, feedback, recovery paths, privacy, and trust surfaces matter.
-- Treat AI as an engineering system, not a magic box: evals, release gates, observability, and evidence belong in the product.
-- Prefer tools that people can keep using on an ordinary Tuesday: local-first, BYOK, plain-language notes, and boringly reliable workflows.
-- Turn personal systems into product systems: if a workflow helps me think, study, ship, or recover, I probably want to make it legible enough for someone else.
+The pattern across my projects is simple: make hard things less mysterious, then make the improvement loop good enough that people come back tomorrow.
 
 ### Commercial Products
 
