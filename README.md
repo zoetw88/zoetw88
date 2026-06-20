@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2600&pause=900&color=334155&center=true&vCenter=true&width=880&height=64&lines=ZoeTW+%E2%80%94+Senior+Backend+Engineer;Commercial+AI+products+and+backend+systems;Evaluation-driven+product+engineering" alt="Animated ZoeTW profile headline" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2600&pause=900&color=334155&center=true&vCenter=true&width=880&height=64&lines=ZoeTW+%E2%80%94+Senior+Backend+Engineer;Commercial+AI+products+and+backend+systems;Turning+anxiety+into+systems" alt="Animated ZoeTW profile headline" />
 
 **Senior backend engineer building commercial AI products, evaluation systems, and practical developer tools.**
 
@@ -16,15 +16,17 @@ Toronto · Taipei
 
 ### Profile
 
-I build AI-assisted products with production-oriented backend systems: authentication, data boundaries, evaluation pipelines, observability, deployment readiness, and product surfaces that can be demonstrated publicly.
+I build software for the moment right before people say, "I know I need to improve, but I do not know what to do next."
 
-What tends to show up in my work:
+That shows up as AI speaking practice for immigration exams, system design interview coaching, local-first weekly planning, commit-pattern telemetry, and workflow templates for engineers working with AI. Different surfaces, same instinct: take something vague and stressful, then turn it into a system people can practice, inspect, and improve.
 
-- I like turning high-stakes preparation into calm, repeatable systems: speaking practice, interview training, weekly planning, and measurable progress.
-- I care about AI that can be inspected: prompts, costs, latency, scoring behavior, fallback paths, and the evidence behind a recommendation.
-- I build product surfaces around real user anxiety, not just model demos: practice, feedback, trust, privacy, recovery, and launch readiness.
-- I am drawn to local-first and BYOK workflows because user data control should be a product feature, not a footnote.
-- I enjoy making engineering work legible: dashboards, readiness checks, templates, technical notes, and tools that help a team see what is actually happening.
+The through-line in my work:
+
+- Make the invisible visible: prompts, scoring behavior, latency, costs, fallbacks, progress, and tradeoffs.
+- Build for anxious real users, not perfect demo users: practice loops, feedback, recovery paths, privacy, and trust surfaces matter.
+- Treat AI as an engineering system, not a magic box: evals, release gates, observability, and evidence belong in the product.
+- Prefer tools that people can keep using on an ordinary Tuesday: local-first, BYOK, plain-language notes, and boringly reliable workflows.
+- Turn personal systems into product systems: if a workflow helps me think, study, ship, or recover, I probably want to make it legible enough for someone else.
 
 ### Commercial Products
 
