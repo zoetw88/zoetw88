@@ -1,34 +1,49 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2600&pause=800&color=8B949E&center=true&vCenter=true&width=860&height=64&lines=ZoeTW+%E2%80%94+Senior+Backend+Engineer;AI+products+with+measurable+loops;Local-first+tools+and+public+showcases" alt="Animated ZoeTW profile headline" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2600&pause=900&color=334155&center=true&vCenter=true&width=880&height=64&lines=ZoeTW+%E2%80%94+Senior+Backend+Engineer;Commercial+AI+products+and+backend+systems;Evaluation-driven+product+engineering" alt="Animated ZoeTW profile headline" />
 
-**Backend systems · AI product loops · local-first tools · public showcases**
+**Senior backend engineer building commercial AI products, evaluation systems, and practical developer tools.**
 
 Toronto · Taipei
 
 <p>
-  <img src="https://img.shields.io/badge/Backend-1f2937?style=for-the-badge&logo=go&logoColor=white" alt="Backend" />
-  <img src="https://img.shields.io/badge/AI%20Products-8b5cf6?style=for-the-badge&logo=openai&logoColor=white" alt="AI Products" />
-  <img src="https://img.shields.io/badge/Public%20Builds-059669?style=for-the-badge&logo=github&logoColor=white" alt="Public Builds" />
+  <img src="https://img.shields.io/badge/Backend%20Systems-1f2937?style=for-the-badge&logo=go&logoColor=white" alt="Backend Systems" />
+  <img src="https://img.shields.io/badge/Commercial%20AI%20Products-2563eb?style=for-the-badge&logo=openai&logoColor=white" alt="Commercial AI Products" />
+  <img src="https://img.shields.io/badge/Evaluation%20Loops-059669?style=for-the-badge&logo=githubactions&logoColor=white" alt="Evaluation Loops" />
 </p>
 
 </div>
 
-### Notes
+### Profile
 
-I am a backend engineer building AI-assisted products, internal tools, and measurable engineering workflows.
+I build AI-assisted products with production-oriented backend systems: authentication, data boundaries, evaluation pipelines, observability, deployment readiness, and product surfaces that can be demonstrated publicly.
 
-Recent GitHub signal: **986 contributions in the last year**, across `speakup`, `zoe-12wy-plan`, `tcf-canada`, and other public/private repos.
+Recent GitHub signal: **986 contributions in the last year**, across `speakup`, `zoe-12wy-plan`, `tcf-canada`, and other public/private repositories.
 
-Lately I have been interested in:
+Current focus areas:
 
-- AI products with visible prompts, costs, latency, eval results, and release gates
-- local-first tools that do not leak private user data
-- public product showcases that explain the actual system, not just the landing page
-- technical notes and workflows that normal people can actually read and reuse
-- small products that are boring enough to keep using
+- Commercial AI products with clear user outcomes, launch surfaces, and trust requirements
+- Evaluation-driven AI systems with visible prompts, costs, latency, scoring, and release gates
+- Backend infrastructure for reliability, privacy, abuse prevention, payments, and observability
+- Local-first and BYOK tools for workflows where user data control matters
+- Technical writing that turns system decisions into reusable engineering knowledge
 
-### Power-ups
+### Commercial Products
+
+| Product | Status | What it demonstrates |
+|---|---:|---|
+| [SpeakUp SD](https://zoetw88.github.io/speakup-sd-showcase/) | Public showcase | AI system design interview practice with speech evaluation, whiteboard evidence, scoring reports, readiness checks, deployment operations, and customer trust surfaces. |
+| [TCF Canada](https://tcf-canada-gamma.vercel.app) | Public demo | AI speaking coach for French immigration exam preparation with speaking-practice UX, product positioning, language-learning flows, and a deployed customer-facing experience. |
+
+### Engineering Systems and Tools
+
+| Project | What it demonstrates |
+|---|---|
+| [12wy-tracker](https://github.com/zoetw88/12wy-tracker) | Local-first Tauri desktop app for 12 Week Year execution, BYOK/Ollama AI coaching, prompt logs, budget limits, and eval artifacts. |
+| [commit-time-machine](https://github.com/zoetw88/commit-time-machine) | Browser-based GitHub commit pattern analyzer for cadence, timing, streaks, and readable engineering telemetry. |
+| [ai-workflow](https://github.com/zoetw88/ai-workflow) | Practical AI-agent workflow templates, prompts, and operating notes from a senior backend engineering perspective. |
+
+### Technical Stack
 
 <p>
   <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go" />
@@ -39,24 +54,15 @@ Lately I have been interested in:
   <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
   <img src="https://img.shields.io/badge/Redis-FF4438?style=flat-square&logo=redis&logoColor=white" alt="Redis" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white" alt="AWS" />
 </p>
-
-### Selected Systems
-
-| Project | What it shows |
-|---|---|
-| [SpeakUp SD Showcase](https://github.com/zoetw88/speakup-sd-showcase) | Public product showcase for a system design interview practice product: AI scoring, whiteboard evidence, evaluation readiness, deployment and trust surfaces |
-| [TCF Canada Showcase](https://github.com/zoetw88/tcf-canada-showcase) | AI speaking coach for French immigration exam preparation, with product positioning, speaking-practice UX, and public demo surface |
-| [12wy-tracker](https://github.com/zoetw88/12wy-tracker) | Local-first Tauri desktop app for 12 Week Year execution, BYOK/Ollama AI coaching, prompt logs, budget limits, and eval artifacts |
-| [commit-time-machine](https://github.com/zoetw88/commit-time-machine) | Browser-based GitHub commit pattern analyzer: activity cadence, timing, streaks, and readable engineering telemetry |
-| [ai-workflow](https://github.com/zoetw88/ai-workflow) | Practical AI-agent workflow templates, prompts, and operating notes from a senior backend engineering perspective |
 
 ### Current Work
 
-- Turning private build work into public repos that show product thinking, system boundaries, and engineering evidence.
-- Building AI workflows that fit real engineering teams instead of one-off demos.
-- Studying system design, evaluation, language learning products, and how engineers can work better with AI.
-- Writing at Zoe Site about AI, backend systems, and plain-language tech.
+- Preparing public-facing product showcases for commercial AI products.
+- Building AI workflows that fit real engineering teams and production constraints.
+- Studying system design, evaluation, language-learning products, and AI-assisted engineering practice.
+- Writing at Zoe Site about backend systems, AI product engineering, and plain-language technical decisions.
 
 <!-- COMMIT-STATS:START -->
 ### Engineering Telemetry
@@ -77,11 +83,11 @@ Signals         streak starter · century · 500 club · kilo contributor · pol
 
 <div align="center">
 
-<a href="https://github.com/zoetw88/speakup-sd-showcase">
-  <img src="https://img.shields.io/badge/SpeakUp%20SD-111827?style=for-the-badge&logo=github&logoColor=white" alt="SpeakUp SD Showcase" />
+<a href="https://zoetw88.github.io/speakup-sd-showcase/">
+  <img src="https://img.shields.io/badge/SpeakUp%20SD-111827?style=for-the-badge&logo=githubpages&logoColor=white" alt="SpeakUp SD" />
 </a>
 <a href="https://tcf-canada-gamma.vercel.app">
-  <img src="https://img.shields.io/badge/TCF%20Canada-2563eb?style=for-the-badge&logo=vercel&logoColor=white" alt="TCF Canada Showcase" />
+  <img src="https://img.shields.io/badge/TCF%20Canada-2563eb?style=for-the-badge&logo=vercel&logoColor=white" alt="TCF Canada" />
 </a>
 <a href="https://github.com/zoetw88/12wy-tracker">
   <img src="https://img.shields.io/badge/12wy--tracker-059669?style=for-the-badge&logo=github&logoColor=white" alt="12wy-tracker" />
