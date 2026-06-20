@@ -18,13 +18,13 @@ Toronto · Taipei
 
 I build AI-assisted products with production-oriented backend systems: authentication, data boundaries, evaluation pipelines, observability, deployment readiness, and product surfaces that can be demonstrated publicly.
 
-Current focus areas:
+What tends to show up in my work:
 
-- Commercial AI products with clear user outcomes, launch surfaces, and trust requirements
-- Evaluation-driven AI systems with visible prompts, costs, latency, scoring, and release gates
-- Backend infrastructure for reliability, privacy, abuse prevention, payments, and observability
-- Local-first and BYOK tools for workflows where user data control matters
-- Technical writing that turns system decisions into reusable engineering knowledge
+- I like turning high-stakes preparation into calm, repeatable systems: speaking practice, interview training, weekly planning, and measurable progress.
+- I care about AI that can be inspected: prompts, costs, latency, scoring behavior, fallback paths, and the evidence behind a recommendation.
+- I build product surfaces around real user anxiety, not just model demos: practice, feedback, trust, privacy, recovery, and launch readiness.
+- I am drawn to local-first and BYOK workflows because user data control should be a product feature, not a footnote.
+- I enjoy making engineering work legible: dashboards, readiness checks, templates, technical notes, and tools that help a team see what is actually happening.
 
 ### Commercial Products
 
