@@ -30,10 +30,10 @@ So the short version is: I make tools for getting better at hard things, then I 
 
 ### Product Desk
 
-| Product | Status | What it demonstrates |
-|---|---:|---|
-| [SpeakUp SD](https://zoetw88.github.io/speakup-sd-showcase/) | Public showcase | AI system design interview practice with speech evaluation, whiteboard evidence, scoring reports, readiness checks, deployment operations, and customer trust surfaces. |
-| [TCF Canada](https://tcf-canada-gamma.vercel.app) | Public demo | AI speaking coach for French immigration exam preparation with speaking-practice UX, product positioning, language-learning flows, and a deployed customer-facing experience. |
+| Product | What it demonstrates |
+|---|---|
+| [SpeakUp SD](https://zoetw88.github.io/speakup-sd-showcase/) | AI system design interview practice with speech evaluation, whiteboard evidence, scoring reports, readiness checks, deployment operations, and customer trust surfaces. |
+| [TCF Canada](https://tcf-canada-gamma.vercel.app) | AI speaking coach for French immigration exam preparation with speaking-practice UX, product positioning, language-learning flows, and a deployed customer-facing experience. |
 
 ### Tool Bench
 
