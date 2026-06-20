@@ -12,46 +12,54 @@ Toronto · Taipei
   <img src="https://img.shields.io/badge/Evaluation%20Loops-059669?style=for-the-badge&logo=githubactions&logoColor=white" alt="Evaluation Loops" />
 </p>
 
+<p>
+  <img src="https://skillicons.dev/icons?i=go,python,ts,react,postgres,redis,docker,aws&perline=8" alt="Go, Python, TypeScript, React, PostgreSQL, Redis, Docker, AWS" />
+</p>
+
 </div>
 
 ### Self Introduction
 
-Hi, I am Zoe. I build tools for people who are preparing for something difficult: a system design interview, a French immigration speaking exam, a 12-week execution sprint, or a team trying to work with AI without losing the plot.
+Hi, I am Zoe. I build software for the weird little gap between **"I care about this"** and **"I know exactly what to do next."**
 
-My favorite kind of product takes a messy human loop and gives it structure. Practice becomes visible. Feedback becomes specific. Progress leaves traces. The system can explain what it saw, what it scored, what it cost, and what changed.
+That gap shows up everywhere in my projects: someone practicing system design out loud, someone preparing for a French immigration speaking exam, someone trying to finish a 12-week plan, or an engineering team trying to use AI without turning their workflow into fog.
 
-I like backend work because it is where product promises become real: auth, queues, ledgers, privacy boundaries, eval gates, observability, payments, and the small unglamorous checks that keep a product honest.
+My instinct is to give messy human progress a backend: practice loops, evidence, scoring, history, privacy boundaries, recovery paths, dashboards, and enough observability that the product can explain itself.
 
-The pattern across my projects is simple: make hard things less mysterious, then make the improvement loop good enough that people come back tomorrow.
+So the short version is: I make tools for getting better at hard things, then I make the system honest enough to show its work.
 
-### Commercial Products
+### Product Desk
+
+<p align="center">
+  <a href="https://github.com/zoetw88/speakup-sd-showcase">
+    <img width="390" src="https://github-readme-stats.vercel.app/api/pin/?username=zoetw88&repo=speakup-sd-showcase&theme=default&hide_border=true&description_lines_count=2" alt="SpeakUp SD showcase repo card" />
+  </a>
+  <a href="https://github.com/zoetw88/tcf-canada-showcase">
+    <img width="390" src="https://github-readme-stats.vercel.app/api/pin/?username=zoetw88&repo=tcf-canada-showcase&theme=default&hide_border=true&description_lines_count=2" alt="TCF Canada showcase repo card" />
+  </a>
+</p>
 
 | Product | Status | What it demonstrates |
 |---|---:|---|
 | [SpeakUp SD](https://zoetw88.github.io/speakup-sd-showcase/) | Public showcase | AI system design interview practice with speech evaluation, whiteboard evidence, scoring reports, readiness checks, deployment operations, and customer trust surfaces. |
 | [TCF Canada](https://tcf-canada-gamma.vercel.app) | Public demo | AI speaking coach for French immigration exam preparation with speaking-practice UX, product positioning, language-learning flows, and a deployed customer-facing experience. |
 
-### Engineering Systems and Tools
+### Tool Bench
+
+<p align="center">
+  <a href="https://github.com/zoetw88/12wy-tracker">
+    <img width="390" src="https://github-readme-stats.vercel.app/api/pin/?username=zoetw88&repo=12wy-tracker&theme=default&hide_border=true&description_lines_count=2" alt="12wy-tracker repo card" />
+  </a>
+  <a href="https://github.com/zoetw88/commit-time-machine">
+    <img width="390" src="https://github-readme-stats.vercel.app/api/pin/?username=zoetw88&repo=commit-time-machine&theme=default&hide_border=true&description_lines_count=2" alt="commit-time-machine repo card" />
+  </a>
+</p>
 
 | Project | What it demonstrates |
 |---|---|
 | [12wy-tracker](https://github.com/zoetw88/12wy-tracker) | Local-first Tauri desktop app for 12 Week Year execution, BYOK/Ollama AI coaching, prompt logs, budget limits, and eval artifacts. |
 | [commit-time-machine](https://github.com/zoetw88/commit-time-machine) | Browser-based GitHub commit pattern analyzer for cadence, timing, streaks, and readable engineering telemetry. |
 | [ai-workflow](https://github.com/zoetw88/ai-workflow) | Practical AI-agent workflow templates, prompts, and operating notes from a senior backend engineering perspective. |
-
-### Technical Stack
-
-<p>
-  <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/Redis-FF4438?style=flat-square&logo=redis&logoColor=white" alt="Redis" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white" alt="AWS" />
-</p>
 
 ### Current Work
 
