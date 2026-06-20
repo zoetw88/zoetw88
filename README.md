@@ -18,8 +18,6 @@ Toronto · Taipei
 
 I build AI-assisted products with production-oriented backend systems: authentication, data boundaries, evaluation pipelines, observability, deployment readiness, and product surfaces that can be demonstrated publicly.
 
-Recent GitHub signal: **986 contributions in the last year**, across `speakup`, `zoe-12wy-plan`, `tcf-canada`, and other public/private repositories.
-
 Current focus areas:
 
 - Commercial AI products with clear user outcomes, launch surfaces, and trust requirements
