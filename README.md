@@ -61,14 +61,14 @@ So the short version is: I make tools for getting better at hard things, then I 
 ### Engineering Telemetry
 
 ```
-Contributions   1258 total · 59 public commits · 1165 private
+Contributions   1303 total · 69 public commits · 1198 private
 First activity  2019-04-28
-Active span     7.2 years · 81/2610 days · 3.1%
+Active span     7.2 years · 81/2611 days · 3.1%
 
-Cadence         favorite day SAT · weekend 39% · avg 15.5/active day
+Cadence         favorite day SAT · weekend 41% · avg 16.1/active day
 Streaks         current 6 days · best 17 days
-Best year       2026 (951)
-Signals         streak starter · century · 500 club · kilo contributor · polyglot · veteran · active streak
+Best year       2026 (996)
+Signals         streak starter · century · 500 club · kilo contributor · weekend builder · library owner · polyglot · veteran · active streak
 ```
 
 <sub>Auto-updated daily. Private contributions are counted by GitHub summary only; peak timing uses public commits.</sub>
