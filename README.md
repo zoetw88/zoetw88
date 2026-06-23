@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2600&pause=900&color=334155&center=true&vCenter=true&width=880&height=64&lines=ZoeTW+%E2%80%94+Senior+Backend+Engineer;Commercial+AI+products+and+backend+systems;Tools+for+getting+better+at+hard+things" alt="Animated ZoeTW profile headline" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2600&pause=900&color=334155&center=true&vCenter=true&width=920&height=64&lines=I+build+AI+products+that+show+their+work;Backend+systems+for+the+gap+between+intent+and+progress;Evaluation+loops%2C+practice+systems%2C+developer+tools" alt="Animated ZoeTW profile headline" />
 
-**Senior backend engineer building commercial AI products, evaluation systems, and practical developer tools.**
+**AI Product Engineer building practical AI applications, evaluation workflows, and backend systems that turn vague goals into measurable progress.**
 
 Toronto · Taipei
 
@@ -15,9 +15,9 @@ Toronto · Taipei
 </p>
 
 <p>
+  <img src="https://img.shields.io/badge/AI%20Applications-2563eb?style=for-the-badge&logo=openai&logoColor=white" alt="AI Applications" />
+  <img src="https://img.shields.io/badge/Evaluation%20Workflows-059669?style=for-the-badge&logo=githubactions&logoColor=white" alt="Evaluation Workflows" />
   <img src="https://img.shields.io/badge/Backend%20Systems-1f2937?style=for-the-badge&logo=go&logoColor=white" alt="Backend Systems" />
-  <img src="https://img.shields.io/badge/Commercial%20AI%20Products-2563eb?style=for-the-badge&logo=openai&logoColor=white" alt="Commercial AI Products" />
-  <img src="https://img.shields.io/badge/Evaluation%20Loops-059669?style=for-the-badge&logo=githubactions&logoColor=white" alt="Evaluation Loops" />
 </p>
 
 <p>
@@ -26,15 +26,21 @@ Toronto · Taipei
 
 </div>
 
-### Self Introduction
+### Hi, I am Zoe.
 
-Hi, I am Zoe. I build software for the weird little gap between **"I care about this"** and **"I know exactly what to do next."**
+I build software for the gap between **"I know what I should do"** and **"I actually did it."**
 
-That gap shows up everywhere in my projects: someone practicing system design out loud, someone preparing for a French immigration speaking exam, someone trying to finish a 12-week plan, or an engineering team trying to use AI without turning their workflow into fog.
+Most people try to solve that gap with motivation.
 
-My instinct is to give messy human progress a backend: practice loops, evidence, scoring, history, privacy boundaries, recovery paths, dashboards, and enough observability that the product can explain itself.
+I usually build a system instead.
 
-So the short version is: I make tools for getting better at hard things, then I make the system honest enough to show its work.
+That system might be an AI coach, a speaking-practice loop, an interview simulator, a local-first execution tracker, or a developer workflow that helps an engineering team use AI without turning the process into fog.
+
+My background is backend engineering, so I naturally think in workflows, state transitions, evidence, scoring, history, privacy boundaries, recovery paths, dashboards, and enough observability for the product to explain itself.
+
+These days I am focused on a simple question:
+
+> How do we build AI products that help people improve at hard things, instead of just generating more text?
 
 ### Product Desk
 
@@ -50,6 +56,12 @@ So the short version is: I make tools for getting better at hard things, then I 
 | 12wy-tracker | Local-first Tauri desktop app for 12 Week Year execution, BYOK/Ollama AI coaching, prompt logs, budget limits, and eval artifacts. |
 | commit-time-machine | Browser-based commit pattern analyzer for cadence, timing, streaks, and readable engineering telemetry. |
 | ai-workflow | Practical AI-agent workflow templates, prompts, and operating notes from a senior backend engineering perspective. |
+
+### Engineering Foundation
+
+Before building AI applications, I worked on production backend systems: real-time communication, IoT device platforms, multi-tenant workflows, APIs, observability, and infrastructure reliability.
+
+That experience shapes how I build AI products: not as shiny demos, but as systems with feedback loops, failure paths, privacy boundaries, cost awareness, and measurable user progress.
 
 ### Current Work
 
