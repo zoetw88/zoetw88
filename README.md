@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2600&pause=900&color=334155&center=true&vCenter=true&width=920&height=64&lines=I+build+AI+products+that+show+their+work;Backend+systems+for+the+gap+between+intent+and+progress;Evaluation+loops%2C+practice+systems%2C+developer+tools" alt="Animated ZoeTW profile headline" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2600&pause=900&color=334155&center=true&vCenter=true&width=980&height=64&lines=Most+people+try+harder.+I+redesign+the+system.;AI+products+with+evidence+and+feedback+loops.;Turning+vague+goals+into+measurable+progress." alt="Animated ZoeTW profile headline" />
 
 **AI Product Engineer building practical AI applications, evaluation workflows, and backend systems that turn vague goals into measurable progress.**
 
@@ -26,19 +26,17 @@ Toronto · Taipei
 
 </div>
 
-### Hi, I am Zoe.
+### Most people try harder. I redesign the system.
 
 I build software for the gap between **"I know what I should do"** and **"I actually did it."**
 
-Most people try to solve that gap with motivation.
+That gap shows up everywhere I build: system design interview practice, French speaking preparation, personal execution, and engineering teams trying to use AI without turning their workflow into fog.
 
-I usually build a system instead.
+My instinct is to turn messy progress into a system: practice loops, scoring, evidence, history, privacy boundaries, recovery paths, dashboards, and enough observability for the product to explain itself.
 
-That system might be an AI coach, a speaking-practice loop, an interview simulator, a local-first execution tracker, or a developer workflow that helps an engineering team use AI without turning the process into fog.
+My background is backend engineering, so I do not think of AI products as chat boxes. I think of them as workflows with state, evaluation, failure modes, cost limits, user trust, and measurable improvement.
 
-My background is backend engineering, so I naturally think in workflows, state transitions, evidence, scoring, history, privacy boundaries, recovery paths, dashboards, and enough observability for the product to explain itself.
-
-These days I am focused on a simple question:
+These days I am focused on one question:
 
 > How do we build AI products that help people improve at hard things, instead of just generating more text?
 
