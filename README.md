@@ -1,23 +1,22 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&duration=2600&pause=900&color=334155&center=true&vCenter=true&width=980&height=64&lines=Most+people+try+harder.+I+redesign+the+system.;AI+products+with+evidence+and+feedback+loops.;Turning+vague+goals+into+measurable+progress." alt="Animated ZoeTW profile headline" />
+# Zoe — AI × backend reality
 
-**AI Product Engineer building practical AI applications, evaluation workflows, and backend systems that turn vague goals into measurable progress.**
+**Senior backend engineer building practical AI products with permissions, evaluation, failure paths, privacy boundaries, and measurable feedback loops.**
 
 Toronto · Taipei
 
 <p>
-  <a href="https://zoe-site-ten.vercel.app"><strong>Personal site</strong></a>
-  ·
-  <a href="https://zoe-site-ten.vercel.app"><strong>Writing</strong></a>
+  <a href="https://zoe-site-ten.vercel.app"><strong>Personal site & writing</strong></a>
   ·
   <a href="https://github.com/zoetw88"><strong>GitHub</strong></a>
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/AI%20Applications-2563eb?style=for-the-badge&logo=openai&logoColor=white" alt="AI Applications" />
-  <img src="https://img.shields.io/badge/Evaluation%20Workflows-059669?style=for-the-badge&logo=githubactions&logoColor=white" alt="Evaluation Workflows" />
-  <img src="https://img.shields.io/badge/Backend%20Systems-1f2937?style=for-the-badge&logo=go&logoColor=white" alt="Backend Systems" />
+  <img src="https://img.shields.io/badge/AI%20Products-E11D74?style=for-the-badge&logo=openai&logoColor=white" alt="AI Products" />
+  <img src="https://img.shields.io/badge/Evaluation-F59E0B?style=for-the-badge&logo=githubactions&logoColor=white" alt="Evaluation" />
+  <img src="https://img.shields.io/badge/Backend%20Systems-7C3AED?style=for-the-badge&logo=go&logoColor=white" alt="Backend Systems" />
+  <img src="https://img.shields.io/badge/Privacy%20Boundaries-0F766E?style=for-the-badge&logo=shield&logoColor=white" alt="Privacy Boundaries" />
 </p>
 
 <p>
