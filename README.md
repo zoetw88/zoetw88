@@ -1,9 +1,17 @@
 # Zoe — AI × backend reality
 
-I'm a curious, systems-minded builder who likes turning messy, difficult goals into clear feedback loops. Backend engineering is my foundation, but I'm just as interested in how people learn, practice, and improve.
+> **Most people try harder. I redesign the system.**
 
-I build practical AI products for system-design interviews, language learning, and engineering workflows. I care about guardrails, evidence, failure paths, and earning user trust—not just generating more text.
+I'm a curious, systems-minded builder. I turn messy goals—learning system design, speaking French, shipping reliable AI—into feedback loops people can actually use.
 
-[Website](https://zoe-builds.com) · [SpeakUp SD](https://speakupinterview.com) · [TCF Canada](https://speak-canada.com/app)
+`messy goal → practice → evidence → better next move`
 
-**Stack:** Go · Python · TypeScript · PostgreSQL · Redis · Docker · AWS
+Backend engineering is my foundation, so I don't build AI as a chat box. I build workflows with state, guardrails, failure paths, observability, and user trust.
+
+### Building
+
+- [SpeakUp SD](https://speakupinterview.com) — voice-first system-design practice
+- [TCF Canada](https://speak-canada.com/app) — an AI French-speaking coach
+- [AI Workflow](https://github.com/zoetw88/ai-workflow) — practical agent workflows for engineers
+
+[Website](https://zoe-builds.com) · Go · Python · TypeScript · PostgreSQL · Redis · Docker · AWS
