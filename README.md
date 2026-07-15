@@ -4,7 +4,7 @@
 
 I'm a curious, systems-minded builder. I turn messy goals—learning system design, speaking French, shipping reliable AI—into feedback loops people can actually use.
 
-`messy goal → practice → evidence → better next move`
+`messy goal → practice → evidence → better next move` <img src="./assets/typing-system.svg" width="180" align="middle" alt="A tiny engineer typing at a laptop" />
 
 Backend engineering is my foundation, so I don't build AI as a chat box. I build workflows with state, guardrails, failure paths, observability, and user trust.
 
