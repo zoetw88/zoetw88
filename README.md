@@ -10,8 +10,8 @@ Backend engineering is my foundation, so I don't build AI as a chat box. I build
 
 ### Building
 
-- [SpeakUp SD](https://speakupinterview.com) — voice-first system-design practice
-- [TCF Canada](https://speak-canada.com/app) — an AI French-speaking coach
-- [AI Workflow](https://github.com/zoetw88/ai-workflow) — practical agent workflows for engineers
+- <img src="./assets/icons/microphone.svg" width="18" alt="Microphone" /> [SpeakUp SD](https://speakupinterview.com) — voice-first system-design practice
+- <img src="./assets/icons/language.svg" width="18" alt="Language" /> [TCF Canada](https://speak-canada.com/app) — an AI French-speaking coach
+- <img src="./assets/icons/workflow.svg" width="18" alt="Workflow" /> [AI Workflow](https://github.com/zoetw88/ai-workflow) — practical agent workflows for engineers
 
-[Website](https://zoe-builds.com) · Go · Python · TypeScript · PostgreSQL · Redis · Docker · AWS
+<img src="./assets/icons/globe.svg" width="18" alt="Website" /> [Website](https://zoe-builds.com) · Go · Python · TypeScript · PostgreSQL · Redis · Docker · AWS
